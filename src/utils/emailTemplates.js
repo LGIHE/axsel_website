@@ -246,10 +246,16 @@ export const partnerInquiryTemplate = (formData) => {
   `;
 };
 
-// Utility function to escape HTML characters
+// Utility function to escape HTML characters - works in both browser and Node.js
 const escapeHtml = (text) => {
   if (!text) return '';
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
+  const htmlEscapeMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;',
+  };
+  return String(text).replace(/[&<>"'\/]/g, (char) => htmlEscapeMap[char]);
 };
