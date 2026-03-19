@@ -1,16 +1,97 @@
-# React + Vite
+# AXSEL Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official website for **AXSEL** — the African Centre for Social Emotional Learning (SEL). AXSEL is the continental hub for SEL accreditation, curriculum integration, and evidence-informed practice across Africa.
 
-Currently, two official plugins are available:
+## About AXSEL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+AXSEL is dedicated to:
+- **Accreditation**: Establishing SEL standards across Africa
+- **Evidence-Informed Practice**: Promoting research-backed SEL methodologies
+- **Continental Collaboration**: Building systemic change through partnerships across African nations
+- **Curriculum Integration**: Supporting institutions in integrating SEL into their programs
 
-## React Compiler
+The center is housed within the Luigi Giussani Institute of Higher Education (LGIHE) in Kampala, Uganda.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Overview
 
-## Expanding the ESLint configuration
+This is a modern, responsive website built with React and Vite that showcases AXSEL's programs, resources, and impact. The site includes:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Hero Section**: Compelling introduction to AXSEL's mission
+- **Evidence Hub**: Research papers, policy briefs, and technical notes
+- **ACSSS Portal**: Information on the African Centre for Social-Emotional Skills and Science certification
+- **SEL Dashboard**: Interactive state of SEL data visualization
+- **ALiVE Legacy**: Information about the historical ALiVE Initiative
+- **Contact & Partner Inquiry Forms**: Engagement opportunities
+- **Impact Counter**: Tracking AXSEL's reach and influence
+
+## Tech Stack
+
+- **Framework**: React 18
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Deployment**: Ready for production deployment
+- **Icons**: Lucide React
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+The development server will start at `http://localhost:5173`
+
+### Building
+
+```bash
+npm run build
+```
+
+### Preview
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/        # React components
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── EvidenceHub.jsx
+│   ├── ACSSPortal.jsx
+│   ├── SELDashboard.jsx
+│   ├── ALiVELegacy.jsx
+│   ├── Footer.jsx
+│   └── ...other components
+├── utils/
+│   └── animations.js  # Animation utilities
+├── App.jsx            # Main app component
+└── main.jsx          # Entry point
+```
+
+## Contact
+
+- **Location**: Luzira, Kampala, Uganda
+- **Phone**: +256 771 234567
+- **Social Media**: 
+  - [Twitter/X](https://x.com/AXSEL_Center)
+  - [Instagram](https://www.instagram.com/axsel_center/)
+  - [YouTube](https://www.youtube.com/@AXSELCenter)
+
+## License
+
+This project is maintained by the Luigi Giussani Institute of Higher Education.
