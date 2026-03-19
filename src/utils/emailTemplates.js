@@ -96,7 +96,7 @@ export const contactFormTemplate = (formData) => {
             ${formData.phone ? `
             <div class="section">
                 <div class="label">Phone</div>
-                <div class="value">${escapeHtml(formData.phone)}</div>
+                <div class="value">${escapeHtml(formData.countryCode)} ${escapeHtml(formData.phone)}</div>
             </div>
             ` : ''}
 
@@ -215,7 +215,7 @@ export const partnerInquiryTemplate = (formData) => {
             ${formData.phone ? `
             <div class="section">
                 <div class="label">Phone</div>
-                <div class="value">${escapeHtml(formData.phone)}</div>
+                <div class="value">${escapeHtml(formData.countryCode)} ${escapeHtml(formData.phone)}</div>
             </div>
             ` : ''}
 

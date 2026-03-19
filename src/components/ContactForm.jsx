@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import { Send, User, Mail, Phone, MessageSquare, MapPin, Building2 } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import { sendContactEmail, isValidEmail } from '../utils/emailService';
+import { COUNTRIES, DEFAULT_COUNTRY } from '../utils/countryCodes';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    countryCode: DEFAULT_COUNTRY.dialCode,
     phone: '',
     subject: '',
     message: '',
@@ -39,6 +41,7 @@ export default function ContactForm() {
       setFormData({
         name: '',
         email: '',
+        countryCode: DEFAULT_COUNTRY.dialCode,
         phone: '',
         subject: '',
         message: '',
@@ -173,16 +176,31 @@ export default function ContactForm() {
                     <div>
                       <label htmlFor="contactPhone" className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-charcoal">
                         <Phone className="h-3.5 w-3.5 text-charcoal-light" />
-                        Phone
+                        Phone <span className="text-charcoal-light text-xs font-normal">(Optional)</span>
                       </label>
-                      <input
-                        type="tel"
-                        id="contactPhone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full rounded-lg border border-warm-gray-dark bg-white px-4 py-2.5 text-sm text-charcoal focus:border-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta/30"
-                      />
+                      <div className="flex gap-2">
+                        <select
+                          name="countryCode"
+                          value={formData.countryCode}
+                          onChange={handleChange}
+                          className="w-20 rounded-lg border border-warm-gray-dark bg-white px-2 py-2.5 text-sm text-charcoal focus:border-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta/30"
+                        >
+                          {COUNTRIES.map((country) => (
+                            <option key={country.dialCode} value={country.dialCode}>
+                              {country.flag} {country.dialCode}
+                            </option>
+                          ))}
+                        </select>
+                        <input
+                          type="tel"
+                          id="contactPhone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="(e.g., 771 234567)"
+                          className="flex-1 rounded-lg border border-warm-gray-dark bg-white px-4 py-2.5 text-sm text-charcoal focus:border-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta/30"
+                        />
+                      </div>
                     </div>
                   </div>
 
