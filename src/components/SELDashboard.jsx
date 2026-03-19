@@ -3,11 +3,11 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const barData = [
-  { country: 'Kenya', educators: 1500, schools: 300 },
-  { country: 'Uganda', educators: 1200, schools: 250 },
-  { country: 'Rwanda', educators: 800, schools: 150 },
-  { country: 'Tanzania mainland', educators: 700, schools: 120 },
-  { country: 'Zanzibar', educators: 300, schools: 60 },
+  { country: 'Kenya', educators: 224 },
+  { country: 'Uganda', educators: 221 },
+  { country: 'Rwanda', educators: 185 },
+  { country: 'Tanzania mainland', educators: 220 },
+  { country: 'Zanzibar', educators: 189 },
 ];
 
 const pieData = [
@@ -89,7 +89,6 @@ export default function SELDashboard() {
                   <YAxis tick={{ fontSize: 12, fill: '#4A4A4A' }} axisLine={false} tickLine={false} />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="educators" name="Educators" fill="#0976B1" radius={[6, 6, 0, 0]} />
-                  <Bar dataKey="schools" name="Schools" fill="#00943F" radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

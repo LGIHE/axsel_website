@@ -57,16 +57,16 @@ export default function Hero() {
           {/* Trust markers */}
           <div className="mt-10 flex items-center gap-4 text-xs text-charcoal-light sm:mt-16 sm:gap-6 sm:text-sm">
             <div className="flex -space-x-2">
-              {[...Array(4)].map((_, i) => (
+              {[...Array(5)].map((_, i) => (
                 <div
                   key={i}
                   className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-warm-gray text-xs font-bold text-charcoal-light"
                 >
-                  {['KE', 'UG', 'RW', 'TZ'][i]}
+                  {['KE', 'UG', 'RW', 'TZ', 'ZNZ'][i]}
                 </div>
               ))}
             </div>
-            <span>Launching across 4 East African nations</span>
+            <span>Launching across 5 East African nations</span>
           </div>
         </div>
       </div>
