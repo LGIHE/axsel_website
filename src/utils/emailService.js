@@ -3,13 +3,10 @@
  * Handles sending emails to info@axsel.africa
  *
  * Configuration:
- * 1. Option A: Using a backend API endpoint
- * 2. Option B: Using EmailJS service
- *
- * Replace API_ENDPOINT with your actual endpoint or configure EmailJS
+ * Uses Vite's environment variables via import.meta.env
  */
 
-const API_ENDPOINT = process.env.REACT_APP_EMAIL_ENDPOINT || '/api/send-email';
+const API_ENDPOINT = import.meta.env.REACT_APP_EMAIL_ENDPOINT || '/api/send-email';
 
 /**
  * Send a contact form email
