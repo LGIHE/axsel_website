@@ -1,12 +1,13 @@
 /**
  * Email Service for AXSEL Forms
- * Handles sending emails to info@axsel.africa
+ * Handles sending emails via configured recipient address
  *
  * Configuration:
  * Uses Vite's environment variables via import.meta.env
  */
 
 const API_ENDPOINT = import.meta.env.REACT_APP_EMAIL_ENDPOINT || '/api/send-email';
+const EMAIL_TO = import.meta.env.REACT_APP_EMAIL_TO || 'info@axsel.africa';
 
 /**
  * Send a contact form email
@@ -22,7 +23,7 @@ export const sendContactEmail = async (formData) => {
       },
       body: JSON.stringify({
         type: 'contact',
-        to: 'info@axsel.africa',
+        to: EMAIL_TO,
         subject: `Contact Form: ${formData.subject}`,
         replyTo: formData.email,
         data: formData,
@@ -54,7 +55,7 @@ export const sendPartnershipEmail = async (formData) => {
       },
       body: JSON.stringify({
         type: 'partnership',
-        to: 'info@axsel.africa',
+        to: EMAIL_TO,
         subject: `Partnership Inquiry: ${formData.organisation}`,
         replyTo: formData.email,
         data: formData,

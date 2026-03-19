@@ -15,11 +15,14 @@ export default async function handler(req, res) {
 
   try {
     const { type, to, subject, replyTo, data } = req.body;
+    
+    // Use environment variable as fallback for recipient email
+    const recipientEmail = to || process.env.RESEND_EMAIL_TO || 'info@axsel.africa';
 
     // Validate required fields
-    if (!to || !subject || !data) {
+    if (!subject || !data) {
       return res.status(400).json({ 
-        error: 'Missing required fields: to, subject, or data' 
+        error: 'Missing required fields: subject or data' 
       });
     }
 
@@ -41,7 +44,7 @@ export default async function handler(req, res) {
     // Send email using Resend
     const result = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
-      to: to,
+      to: recipientEmail,
       replyTo: replyTo || data.email,
       subject: subject,
       html: htmlContent,
