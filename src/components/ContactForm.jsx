@@ -186,7 +186,7 @@ export default function ContactForm() {
                           className="w-20 rounded-lg border border-warm-gray-dark bg-white px-2 py-2.5 text-sm text-charcoal focus:border-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta/30"
                         >
                           {COUNTRIES.map((country) => (
-                            <option key={country.dialCode} value={country.dialCode}>
+                            <option key={country.code} value={country.dialCode}>
                               {country.flag} {country.dialCode}
                             </option>
                           ))}
