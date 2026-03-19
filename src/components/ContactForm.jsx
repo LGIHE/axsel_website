@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, User, Mail, Phone, MessageSquare, MapPin, Building2 } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../utils/animations';
+import { sendContactEmail, isValidEmail } from '../utils/emailService';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,14 +13,41 @@ export default function ContactForm() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+
+    // Validate form
+    if (!isValidEmail(formData.email)) {
+      setError('Please enter a valid email address.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await sendContactEmail(formData);
+      setSubmitted(true);
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+      });
+    } catch (err) {
+      setError(err.message || 'Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -190,13 +218,21 @@ export default function ContactForm() {
                       className="w-full resize-none rounded-lg border border-warm-gray-dark bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-charcoal-light/50 focus:border-terracotta focus:outline-none focus:ring-1 focus:ring-terracotta/30"
                     />
                   </div>
+
+                  {/* Error Message Display */}
+                  {error && (
+                    <div className="rounded-lg border border-red-200 bg-red-50 p-4">
+                      <p className="text-sm font-medium text-red-800">{error}</p>
+                    </div>
+                  )}
                 </div>
 
                 <button
                   type="submit"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-terracotta px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-terracotta-dark hover:shadow-md"
+                  disabled={loading}
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-terracotta px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-terracotta-dark hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                   <Send className="h-4 w-4" />
                 </button>
               </form>
