@@ -6,17 +6,19 @@ const barData = [
   { country: 'Kenya', educators: 1500, schools: 300 },
   { country: 'Uganda', educators: 1200, schools: 250 },
   { country: 'Rwanda', educators: 800, schools: 150 },
-  { country: 'Tanzania', educators: 700, schools: 120 },
+  { country: 'Tanzania mainland', educators: 700, schools: 120 },
+  { country: 'Zanzibar', educators: 300, schools: 60 },
 ];
 
 const pieData = [
-  { name: 'Problem Solving', value: 28 },
-  { name: 'Collaboration', value: 25 },
-  { name: 'Self-Awareness', value: 24 },
-  { name: 'Resilience', value: 23 },
+  { name: 'Self-Awareness', value: 20 },
+  { name: 'Self-Management', value: 20 },
+  { name: 'Social Awareness', value: 20 },
+  { name: 'Relationship Skills', value: 20 },
+  { name: 'Responsible Decision-Making', value: 20 },
 ];
 
-const PIE_COLORS = ['#0976B1', '#F7F400', '#00943F', '#EA202E'];
+const PIE_COLORS = ['#0976B1', '#F7F400', '#00943F', '#EA202E', '#7B2D8D'];
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -79,7 +81,7 @@ export default function SELDashboard() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-charcoal-light">
               Target: Educators to Train by Country (Phase 1)
             </h3>
-            <div className="mt-4 h-56 sm:mt-6 sm:h-72">
+            <div className="mt-4 h-56 min-w-0 sm:mt-6 sm:h-72">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={barData} barCategoryGap="25%">
                   <CartesianGrid strokeDasharray="3 3" stroke="#E5E2DD" vertical={false} />
@@ -101,7 +103,7 @@ export default function SELDashboard() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-charcoal-light">
               Planned SEL Competency Focus Areas
             </h3>
-            <div className="mt-4 h-56 sm:mt-6 sm:h-72">
+            <div className="mt-4 h-56 min-w-0 sm:mt-6 sm:h-72">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
