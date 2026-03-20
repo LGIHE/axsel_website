@@ -4,7 +4,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#legacy' },
-  { label: 'Evidence Hub', href: '#evidence' },
+  // { label: 'Evidence Hub', href: '#evidence' },
   { label: 'ACIP', href: '#acip' },
   { label: 'Dashboard', href: '#dashboard' },
   { label: 'Contact', href: '#contact' },
