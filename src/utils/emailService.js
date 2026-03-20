@@ -6,8 +6,8 @@
  * Uses Vite's environment variables via import.meta.env
  */
 
-const API_ENDPOINT = import.meta.env.REACT_APP_EMAIL_ENDPOINT || '/api/send-email';
-const EMAIL_TO = import.meta.env.REACT_APP_EMAIL_TO || 'info@axsel.africa';
+const API_ENDPOINT = import.meta.env.VITE_EMAIL_ENDPOINT || '/api/send-email';
+const EMAIL_TO = import.meta.env.VITE_EMAIL_TO || 'info@axsel.africa';
 
 /**
  * Send a contact form email

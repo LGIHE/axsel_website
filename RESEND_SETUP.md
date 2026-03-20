@@ -29,14 +29,17 @@ Learn more: [https://resend.com](https://resend.com)
 Your `.env.local` file is already configured with:
 
 ```env
-REACT_APP_EMAIL_ENDPOINT=/api/send-email
+VITE_EMAIL_ENDPOINT=/api/send-email
+VITE_EMAIL_TO="info@axsel.africa"
 RESEND_API_KEY="re_hBZrddPu_FiZL9yoUQdF9xJgN4YdxEgMQ"
-RESEND_FROM_EMAIL="noreply@axsel.africa"
+RESEND_FROM_EMAIL="axsel-noreply@lgihe.org"
+RESEND_EMAIL_TO="info@axsel.africa"
 ```
 
 **Important**: 
 - Keep your `RESEND_API_KEY` secret (never commit it to public repositories)
-- Update `RESEND_FROM_EMAIL` to your verified email domain in Resend
+- Frontend variables must use `VITE_` prefix (Vite requirement) - do NOT use `REACT_APP_`
+- Backend variables (RESEND_*) can use any name but won't be exposed to frontend
 
 ### 3. Verify Your Email Domain (Production)
 
@@ -123,12 +126,17 @@ Resend works perfectly with Vercel:
 
 1. Push your code to your repository
 2. Import project in Vercel
-3. Add environment variables:
-   - `RESEND_API_KEY`
-   - `RESEND_FROM_EMAIL`
+3. **Add environment variables in Vercel Settings → Environment Variables:**
+   - `VITE_EMAIL_ENDPOINT` = `/api/send-email` (frontend)
+   - `VITE_EMAIL_TO` = `info@axsel.africa` (frontend)
+   - `RESEND_API_KEY` = your API key from Resend (backend)
+   - `RESEND_FROM_EMAIL` = your sender email (backend)
+   - `RESEND_EMAIL_TO` = `info@axsel.africa` (backend)
 4. Deploy
 
-The `/api/send-email.js` file will automatically become a serverless function.
+**Important:** Frontend variables MUST start with `VITE_` (Vite requirement), not `REACT_APP_`. This is why emails weren't sending - the frontend couldn't access the environment variables!
+
+The `/api/send-email.js` file will automatically become a serverless function on Vercel.
 
 ### Netlify Deployment
 
