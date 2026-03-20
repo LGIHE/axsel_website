@@ -48,11 +48,11 @@ const colorMap = {
     iconHover: 'group-hover:bg-sage',
   },
   ochre: {
-    bg: 'bg-red/10',
-    text: 'text-red',
-    hoverBorder: 'hover:border-red/30',
-    badge: 'bg-red/5 text-red',
-    iconHover: 'group-hover:bg-red',
+    bg: 'bg-ochre/10',
+    text: 'text-ochre',
+    hoverBorder: 'hover:border-ochre/30',
+    badge: 'bg-ochre/5 text-ochre',
+    iconHover: 'group-hover:bg-ochre',
   },
 };
 
