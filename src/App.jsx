@@ -38,11 +38,11 @@ function App() {
             <ALiVELegacy />
           </Suspense>
         </DeferredSection>
-        <DeferredSection anchorId="evidence" minHeight={460} rootMargin="450px 0px">
+        {/* <DeferredSection anchorId="evidence" minHeight={460} rootMargin="450px 0px">
           <Suspense fallback={<SectionFallback minHeight={460} />}>
             <EvidenceHub />
           </Suspense>
-        </DeferredSection>
+        </DeferredSection> */}
         <DeferredSection anchorId="acip" minHeight={560} rootMargin="450px 0px">
           <Suspense fallback={<SectionFallback minHeight={560} />}>
             <ACSSPortal />
