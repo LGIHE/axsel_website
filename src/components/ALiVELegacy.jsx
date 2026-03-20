@@ -33,9 +33,9 @@ const timelineItems = [
   },
   {
     year: '2027',
-    title: 'Planned: ACSSS First Cohort',
+    title: 'Planned: ACIP First Cohort',
     description:
-      'Targeted launch of the AXSEL Certified SEL Systems Specialist programme, with the first cohort of practitioners entering the micro-credential pathway.',
+      'Targeted launch of the AXSEL Certified Integration Practitioner programme, with the first cohort of practitioners entering the micro-credential pathway.',
     tag: 'Target',
   },
   {
@@ -137,7 +137,7 @@ export default function ALiVELegacy() {
           className="mt-16 text-center"
         >
           <a
-            href="#acsss"
+            href="#acip"
             className="inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-charcoal-light hover:shadow-lg"
           >
             Join the Next Chapter

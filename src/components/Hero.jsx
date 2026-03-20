@@ -43,7 +43,7 @@ export default function Hero() {
               href="#acsss"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-terracotta/25 transition-all hover:bg-terracotta-dark hover:shadow-xl hover:shadow-terracotta/30 sm:px-7 sm:py-3.5"
             >
-              Discover the ACSSS Vision
+              Discover the ACIP Vision
               <ArrowRight className="h-4 w-4" />
             </a>
             <a

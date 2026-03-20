@@ -5,7 +5,7 @@ const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#legacy' },
   { label: 'Evidence Hub', href: '#evidence' },
-  { label: 'ACSSS', href: '#acsss' },
+  { label: 'ACIP', href: '#acip' },
   { label: 'Dashboard', href: '#dashboard' },
   { label: 'Contact', href: '#contact' },
 ];

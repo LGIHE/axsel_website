@@ -8,8 +8,8 @@ const socialLinks = [
 
 const footerLinks = {
   Programs: [
-    { label: 'ACSSS Certification', href: '#acsss' },
-    { label: 'Micro-credentials', href: '#acsss' },
+    { label: 'ACIP Certification', href: '#acip' },
+    { label: 'Micro-credentials', href: '#acip' },
     { label: 'Curriculum Integration', href: '#home' },
     { label: 'Training Workshops', href: '#contact' },
   ],

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, GraduationCap, BadgeCheck, BookMarked, ArrowRight, Check } from 'lucide-react';
+import { Award, BadgeCheck, BookMarked, ArrowRight, Check } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const roadmapSteps = [
@@ -26,22 +26,12 @@ const roadmapSteps = [
   {
     icon: Award,
     level: 'Level 3',
-    title: 'SEL Systems Specialist',
-    type: 'Professional Diploma',
-    duration: '6 months',
+    title: 'Integration Systems Specialist',
+    type: 'Professional Diploma / Postgraduate Option',
+    duration: '6-12 months',
     description:
-      'Advanced systems-level competencies for driving SEL policy, institutional change, and cross-national collaboration.',
-    outcomes: ['Systems leadership', 'Policy influencing', 'Programme design'],
-  },
-  {
-    icon: GraduationCap,
-    level: 'Level 4',
-    title: 'SEL Systems Leader',
-    type: 'Postgraduate Diploma',
-    duration: '12 months',
-    description:
-      'The pinnacle of ACSSS accreditation — preparing continental leaders to drive systemic change in education through evidence-informed SEL practice.',
-    outcomes: ['Research methodology', 'Continental strategy', 'Institutional leadership'],
+      'Advanced systems-level competencies for driving SEL policy, institutional change, research methodology, and continental collaboration. Pathways for both professional practitioners and postgraduate scholars.',
+    outcomes: ['Systems leadership', 'Policy influencing', 'Research methodology', 'Continental strategy'],
   },
 ];
 
@@ -67,12 +57,12 @@ export default function ACSSPortal() {
             variants={fadeInUp}
             className="mt-4 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl"
           >
-            ACSSS: AXSEL Certified{' '}
-            <span className="text-terracotta">SEL Systems Specialist</span>
+            AXSEL Certified{' '}
+            <span className="text-terracotta">Integration Practitioner</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg leading-relaxed text-charcoal-light">
-            Our planned continental standard for professional SEL practice. The accreditation pathway
-            will take practitioners from foundational competencies to systems-level leadership through
+            Our planned continental standard for professional SEL integration practice. The accreditation pathway
+            will take practitioners from foundational competencies to systems-level specialist expertise through
             rigorous, context-rooted, learning-by-doing training.
           </motion.p>
         </motion.div>
@@ -89,7 +79,7 @@ export default function ACSSPortal() {
           <div className="relative">
             <div className="absolute top-12 left-0 right-0 hidden h-0.5 bg-gradient-to-r from-terracotta/20 via-terracotta to-terracotta/20 lg:block" />
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {roadmapSteps.map((step, index) => (
                 <motion.div key={step.level} variants={fadeInUp} className="relative">
                   {/* Step number circle */}
@@ -148,9 +138,9 @@ export default function ACSSPortal() {
         >
           <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
             <div>
-              <h3 className="text-xl font-bold text-white sm:text-2xl">Interested in the ACSSS programme?</h3>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">Interested in the ACIP programme?</h3>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-300">
-                Register your interest to be among the first cohort of certified SEL professionals
+                Register your interest to be among the first cohort of certified integration practitioners
                 when AXSEL launches. Early partners will help shape the programme.
               </p>
             </div>

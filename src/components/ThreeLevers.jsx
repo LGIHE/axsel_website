@@ -5,10 +5,10 @@ import { fadeInUp, staggerContainer } from '../utils/animations';
 const levers = [
   {
     icon: ShieldCheck,
-    title: 'Accreditation (ACSSS)',
-    subtitle: 'Professional Standards for SEL',
+    title: 'Accreditation (ACIP)',
+    subtitle: 'Professional Standards for SEL Integration',
     description:
-      'The AXSEL Certified SEL Systems Specialist programme will set the continental benchmark for professional practice. From micro-credentials to postgraduate diplomas, we are designing rigorous, context-rooted accreditation pathways to build systemic competence.',
+      'The AXSEL Certified Integration Practitioner programme will set the continental benchmark for professional practice. From micro-credentials to postgraduate diplomas, we are designing rigorous, context-rooted accreditation pathways to build systemic competence.',
     features: ['Micro-credential Pathways', 'Quality Assurance Framework', 'Continental Recognition'],
     color: 'terracotta',
   },
@@ -48,11 +48,11 @@ const colorMap = {
     iconHover: 'group-hover:bg-sage',
   },
   ochre: {
-    bg: 'bg-ochre/10',
-    text: 'text-ochre',
-    hoverBorder: 'hover:border-ochre/30',
-    badge: 'bg-ochre/5 text-ochre',
-    iconHover: 'group-hover:bg-ochre',
+    bg: 'bg-red/10',
+    text: 'text-red',
+    hoverBorder: 'hover:border-red/30',
+    badge: 'bg-red/5 text-red',
+    iconHover: 'group-hover:bg-red',
   },
 };
 
@@ -134,7 +134,7 @@ export default function ThreeLevers() {
                 {/* Learn More */}
                 <div className="mt-8">
                   <a
-                    href="#acsss"
+                    href="#acip"
                     className={`inline-flex items-center gap-1 text-sm font-semibold ${colors.text} transition-all hover:gap-2`}
                   >
                     Learn More

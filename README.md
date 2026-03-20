@@ -18,7 +18,7 @@ This is a modern, responsive website built with React and Vite that showcases AX
 
 - **Hero Section**: Compelling introduction to AXSEL's mission
 - **Evidence Hub**: Research papers, policy briefs, and technical notes
-- **ACSSS Portal**: Information on the African Centre for Social-Emotional Skills and Science certification
+- **ACIP Portal**: Information on the AXSEL Certified Integration Practitioner accreditation
 - **SEL Dashboard**: Interactive state of SEL data visualization
 - **ALiVE Legacy**: Information about the historical ALiVE Initiative
 - **Contact & Partner Inquiry Forms**: Engagement opportunities
