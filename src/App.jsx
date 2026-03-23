@@ -1,7 +1,9 @@
 import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import DeferredSection from './components/DeferredSection';
+import NotFound from './components/NotFound';
 
 const ImpactCounter = lazy(() => import('./components/ImpactCounter'));
 const ThreeLevers = lazy(() => import('./components/ThreeLevers'));
@@ -17,7 +19,7 @@ function SectionFallback({ minHeight = 320 }) {
   return <div aria-hidden="true" style={{ minHeight }} />;
 }
 
-function App() {
+function HomePage() {
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -70,6 +72,15 @@ function App() {
         </Suspense>
       </DeferredSection>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
