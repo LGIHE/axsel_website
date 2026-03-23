@@ -1,12 +1,6 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "env": {
-    "RESEND_API_KEY": "@resend_api_key",
-    "RESEND_FROM_EMAIL": "@resend_from_email",
-    "RESEND_EMAIL_TO": "@resend_email_to",
-    "VITE_EMAIL_TO": "@vite_email_to"
-  },
   "functions": {
     "api/**/*.js": {
       "memory": 1024,
