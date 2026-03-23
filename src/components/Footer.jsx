@@ -40,7 +40,7 @@ export default function Footer() {
               className="h-24 w-auto"
             />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-400">
-              The African Center for Social Emotional Learning — building towards systemic change
+              The Africa Center of Social Emotional Learning — building towards systemic change
               through accreditation, evidence-informed practice, and continental collaboration.
             </p>
             <div className="mt-6 space-y-2 text-sm text-gray-400">
@@ -115,7 +115,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} AXSEL. All rights reserved. Built on the legacy of ALiVE.
           </p>
           <p className="mt-2 text-xs text-gray-500 sm:mt-0">
-            An initiative of the African Center for Social Emotional Learning
+            An initiative of the Africa Center of Social Emotional Learning
           </p>
         </div>
       </div>

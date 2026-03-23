@@ -1,33 +1,51 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, BookOpen, BarChart3, ArrowRight } from 'lucide-react';
+import { ShieldCheck, BookOpen, BarChart3, Network, HandCoins, ArrowRight } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const levers = [
   {
     icon: ShieldCheck,
-    title: 'Accreditation (ACIP)',
-    subtitle: 'Professional Standards for SEL Integration',
+    title: 'Accreditation & Certification',
+    subtitle: 'A Pan-African Reference for SEL Credentials',
     description:
-      'The AXSEL Certified Integration Practitioner programme will set the continental benchmark for professional practice. From micro-credentials to postgraduate diplomas, we are designing rigorous, context-rooted accreditation pathways to build systemic competence.',
-    features: ['Micro-credential Pathways', 'Quality Assurance Framework', 'Continental Recognition'],
+      'AXSEL will establish a trusted credentialing architecture, from micro-credentials to co-badged postgraduate pathways, combining formal learning with supervised, system-facing project work.',
+    features: ['Micro-Credentials', 'Co-Badged Postgraduate Programs', 'Pan-African Standards'],
     color: 'terracotta',
   },
   {
     icon: BookOpen,
-    title: 'Curriculum Integration',
-    subtitle: 'Embedding SEL in Education Systems',
+    title: 'Curriculum & Pedagogy',
+    subtitle: 'Embedding Evidence-Informed SEL in Practice',
     description:
-      'We will partner with Ministries of Education to embed social emotional learning within national curricula. Our planned approach is systemic, not supplementary — weaving SEL competencies into the fabric of teaching and learning frameworks.',
-    features: ['National Curriculum Alignment', 'Teacher Capacity Building', 'Learning-by-Doing Pedagogy'],
+      'AXSEL co-creates curriculum frameworks and practice-based pedagogies for pre-service and in-service teacher training, ensuring SEL competencies are applied, internalized, and scaled.',
+    features: ['Pre-Service and In-Service Integration', 'Practice-Based Pedagogy', 'Teacher Capacity Strengthening'],
     color: 'sage',
   },
   {
-    icon: BarChart3,
-    title: 'Evidence-Based Practice',
-    subtitle: 'Data-Driven Decision Making',
+    icon: Network,
+    title: 'Governance & Partnerships',
+    subtitle: 'Credible Institution, Strategic Alliances',
     description:
-      'Our planned Evidence Hub will aggregate research, policy briefs, and technical notes to inform SEL implementation across Africa. We aim to bridge the gap between academic research and practitioner action through context-sensitive, evidence-informed guidance.',
-    features: ['Research Repository', 'Policy Briefs', 'Impact Measurement Tools'],
+      'AXSEL builds robust governance and operational leadership while partnering with ministries, universities, teacher training institutions, and regional bodies to accelerate adoption.',
+    features: ['Institutional Governance', 'Regional Partnerships', 'System-Level Collaboration'],
+    color: 'ochre',
+  },
+  {
+    icon: HandCoins,
+    title: 'Sustainability & Financing',
+    subtitle: 'Mission-Aligned, Long-Term Resourcing',
+    description:
+      'AXSEL will secure diversified financing through premium credentials, services, grants, and innovative funding structures to sustain long-term pan-African impact.',
+    features: ['Diversified Funding', 'Credential and Service Revenue', 'Long-Term Sustainability'],
+    color: 'terracotta',
+  },
+  {
+    icon: BarChart3,
+    title: 'Evidence Sourcing & Application',
+    subtitle: 'African-Led Research to Actionable Insights',
+    description:
+      'All programmes are anchored in rigorous African-led research and data, converting evidence into policy influence, practical guidance, and innovative scale pathways.',
+    features: ['Research and Data', 'Policy Influence', 'Scale Innovation'],
     color: 'ochre',
   },
 ];
@@ -78,14 +96,14 @@ export default function ThreeLevers() {
             variants={fadeInUp}
             className="mt-4 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl"
           >
-            Three Levers for Systemic Change
+            Five Integrated Pathways for Systemic Change
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light"
           >
-            AXSEL will drive continental maturity in social emotional learning through three
-            interconnected pillars of action.
+            AXSEL advances its mission through five integrated pathways that move from evidence to
+            certification, from pedagogy to partnership, and from financing to sustainable scale.
           </motion.p>
         </motion.div>
 

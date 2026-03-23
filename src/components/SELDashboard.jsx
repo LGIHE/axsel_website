@@ -6,7 +6,7 @@ const barData = [
   { country: 'Kenya', educators: 224 },
   { country: 'Uganda', educators: 221 },
   { country: 'Rwanda', educators: 185 },
-  { country: 'Tanzania mainland', educators: 220 },
+  { country: 'Tanzania Mainland', educators: 220 },
   { country: 'Zanzibar', educators: 189 },
 ];
 
@@ -51,17 +51,18 @@ export default function SELDashboard() {
             variants={fadeInUp}
             className="inline-block text-xs font-semibold uppercase tracking-widest text-terracotta"
           >
-            Projected Impact
+            Challenge and Trajectory
           </motion.span>
           <motion.h2
             variants={fadeInUp}
             className="mt-4 text-3xl font-bold tracking-tight text-charcoal sm:text-4xl"
           >
-            State of SEL Dashboard <span className="text-terracotta">(Projected)</span>
+            State of SEL Dashboard <span className="text-terracotta">(Legacy + Future)</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 max-w-2xl text-lg text-charcoal-light">
-            Projected targets for SEL adoption, educator training, and competency development
-            across the continent. Live data will populate as AXSEL becomes operational.
+            Baseline evidence shows less than 10% proficiency in core SEL competencies, with
+            problem-solving as low as 2.7%. AXSEL translates this challenge into a measurable,
+            pan-African pathway for educator capacity, credentialing, and learner outcomes.
           </motion.p>
         </motion.div>
 
@@ -79,7 +80,7 @@ export default function SELDashboard() {
             className="rounded-2xl border border-warm-gray-dark bg-white p-4 sm:p-6 md:col-span-3"
           >
             <h3 className="text-sm font-semibold uppercase tracking-wider text-charcoal-light">
-              Target: Educators to Train by Country (Phase 1)
+              ALiVE Legacy: Educators Trained by Country (Through 2025)
             </h3>
             <div className="mt-4 h-56 min-w-0 sm:mt-6 sm:h-72">
               <ResponsiveContainer width="100%" height="100%">
@@ -100,7 +101,7 @@ export default function SELDashboard() {
             className="rounded-2xl border border-warm-gray-dark bg-white p-4 sm:p-6 md:col-span-2"
           >
             <h3 className="text-sm font-semibold uppercase tracking-wider text-charcoal-light">
-              Planned SEL Competency Focus Areas
+              AXSEL Priority SEL Competency Areas
             </h3>
             <div className="mt-4 h-56 min-w-0 sm:mt-6 sm:h-72">
               <ResponsiveContainer width="100%" height="100%">
@@ -144,7 +145,8 @@ export default function SELDashboard() {
           viewport={{ once: true }}
           className="mt-6 text-center text-xs text-charcoal-light/60"
         >
-          Projected targets based on programme design documents. Live metrics will be available post-launch.
+          Legacy figures reflect ALiVE implementation through 2025. Pan-African live metrics will
+          expand as AXSEL programmes scale.
         </motion.p>
       </div>
     </section>

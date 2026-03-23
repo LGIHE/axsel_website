@@ -27,30 +27,32 @@ export default function Hero() {
           <h1 className="mt-8 text-3xl font-extrabold leading-tight tracking-tight text-charcoal sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             Empowering Africa's Future through{' '}
             <span className="bg-gradient-to-r from-terracotta to-ochre bg-clip-text text-transparent">
-              Social Emotional Excellence
+              Social Emotional Learning
             </span>
           </h1>
 
           {/* Subtext */}
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal-light sm:text-xl">
-            Building the continental hub for SEL accreditation, curriculum integration, and
-            evidence-informed practice — a bold vision for systemic capacity across Africa's education systems.
+            AXSEL, the Africa Center of Social Emotional Learning, builds on ALiVE's legacy since
+            2017 to translate evidence into scalable SEL solutions across curriculum, pedagogy,
+            assessment, and credentials. Today, less than 10% of adolescents in East Africa show
+            proficiency in key SEL competencies, with problem-solving as low as 2.7%.
           </p>
 
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <a
-              href="#acsss"
+              href="#legacy"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-terracotta/25 transition-all hover:bg-terracotta-dark hover:shadow-xl hover:shadow-terracotta/30 sm:px-7 sm:py-3.5"
             >
-              Discover the ACIP Vision
+              Discover the AXSEL Vision
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#evidence"
+              href="#approach"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-3 text-sm font-semibold text-charcoal shadow-sm transition-all hover:border-charcoal/30 hover:shadow-md sm:px-7 sm:py-3.5"
             >
-              Our Strategic Roadmap
+              Explore Five Pathways
             </a>
           </div>
 
@@ -66,7 +68,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <span>Launching across 5 East African nations</span>
+            <span>Launching across 5 East African countries</span>
           </div>
         </div>
       </div>

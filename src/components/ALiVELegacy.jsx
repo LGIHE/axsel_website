@@ -14,35 +14,35 @@ const timelineItems = [
     year: '2018–23',
     title: 'Research & Groundwork',
     description:
-      'The ALiVE project built a body of evidence on social emotional learning in East African contexts, generating insights that would inform the creation of AXSEL.',
+      'The ALiVE project generated the first reliable, large-scale evidence on adolescents\' life skills across East Africa, showing why SEL competencies are essential alongside literacy and numeracy.',
     tag: 'Research',
   },
   {
     year: '2024',
     title: 'AXSEL Concept Formalised',
     description:
-      'The vision for AXSEL — the African Center for Social Emotional Learning — is formalised, transitioning from a project-based approach to a continental institutional model.',
+      'The vision for AXSEL — the Africa Center of Social Emotional Learning — is formalised, transitioning from a project-based approach to a pan-African institutional model.',
     tag: 'Milestone',
   },
   {
     year: '2025–26',
-    title: 'Institutional Design & Partnerships',
+    title: 'Institutional Design, Capacity & Partnerships',
     description:
-      'Building the governance, accreditation, and partnership frameworks needed to launch AXSEL. Engaging Ministries of Education and development partners across four countries.',
+      'Building governance, accreditation, and partnership frameworks while extending ALiVE impact, including more than 1,000 educators, practitioners, and government actors trained by 2025.',
     tag: 'Planning',
   },
   {
     year: '2027',
-    title: 'Planned: ACIP First Cohort',
+    title: 'Planned: AXSEL Pathways Activation',
     description:
-      'Targeted launch of the AXSEL Certified Integration Practitioner programme, with the first cohort of practitioners entering the micro-credential pathway.',
+      'Targeted launch of integrated pathways in accreditation, curriculum and pedagogy, governance and partnerships, sustainability and financing, and evidence application.',
     tag: 'Target',
   },
   {
     year: '2040',
     title: 'Continental Vision',
     description:
-      'Our long-term goal: 10,000+ certified practitioners across Africa, with SEL embedded in national curricula across 20+ countries as standard educational practice.',
+      'AXSEL will be Africa\'s leading centre for SEL assessment, credentialing, and innovation: certifying about 10,000 practitioners and embedding SEL approaches across 55 countries.',
     tag: 'Vision',
   },
 ];
@@ -75,7 +75,7 @@ export default function ALiVELegacy() {
           <motion.p variants={fadeInUp} className="mt-4 text-lg leading-relaxed text-charcoal-light">
             What began as the ALiVE project — Action for Life Skills and Values in East Africa — is
             evolving into a continental institution. AXSEL will carry forward the DNA of learning-by-doing,
-            evidence-informed practice, and deep partnership with education systems.
+            evidence-informed practice, and deep partnership with education and workforce systems.
           </motion.p>
         </motion.div>
 

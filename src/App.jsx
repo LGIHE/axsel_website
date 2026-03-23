@@ -28,7 +28,7 @@ function App() {
             <ImpactCounter />
           </Suspense>
         </DeferredSection>
-        <DeferredSection minHeight={420} rootMargin="450px 0px">
+        <DeferredSection anchorId="approach" minHeight={420} rootMargin="450px 0px">
           <Suspense fallback={<SectionFallback minHeight={420} />}>
             <ThreeLevers />
           </Suspense>

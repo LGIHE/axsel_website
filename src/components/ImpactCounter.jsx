@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Users, Globe, Target, BookOpen, GraduationCap } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
-function AnimatedCounter({ end, duration = 2000, suffix = '' }) {
+function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '', decimals = 0 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const started = useRef(false);
@@ -18,7 +18,7 @@ function AnimatedCounter({ end, duration = 2000, suffix = '' }) {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * end));
+            setCount(eased * end);
             if (progress < 1) requestAnimationFrame(animate);
           };
           requestAnimationFrame(animate);
@@ -32,7 +32,10 @@ function AnimatedCounter({ end, duration = 2000, suffix = '' }) {
 
   return (
     <span ref={ref}>
-      {count.toLocaleString()}{suffix}
+      {prefix}{count.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}{suffix}
     </span>
   );
 }
@@ -40,38 +43,40 @@ function AnimatedCounter({ end, duration = 2000, suffix = '' }) {
 const stats = [
   {
     icon: Users,
-    value: 5000,
+    value: 1000,
     suffix: '+',
-    label: 'Educators Targeted',
-    description: 'First-phase training goal across primary and secondary systems',
-  },
-  {
-    icon: Globe,
-    value: 4,
-    suffix: '',
-    label: 'Countries in Scope',
-    description: 'Kenya, Uganda, Rwanda, Tanzania',
+    label: 'Educators Trained by 2025',
+    description: 'ALiVE legacy across educators, practitioners, and government actors',
   },
   {
     icon: BookOpen,
-    value: 5,
-    suffix: '',
-    label: 'SEL Competency Domains',
-    description: 'Self-awareness, collaboration, resilience, problem solving, and more',
+    value: 10,
+    suffix: '%',
+    prefix: '<',
+    label: 'SEL Proficiency Baseline',
+    description: 'Less than 10% of adolescents currently show key SEL proficiency',
   },
   {
     icon: GraduationCap,
-    value: 4,
+    value: 2.7,
+    suffix: '%',
+    decimals: 1,
+    label: 'Problem-Solving Proficiency',
+    description: 'Current observed proficiency level in East Africa',
+  },
+  {
+    icon: Globe,
+    value: 55,
     suffix: '',
-    label: 'Accreditation Levels',
-    description: 'From micro-credentials to postgraduate diplomas',
+    label: 'Countries for SEL Embedding',
+    description: 'Continental systems reach target by 2040',
   },
   {
     icon: Target,
     value: 10000,
     suffix: '+',
-    label: 'Practitioners by 2040',
-    description: 'Long-term continental scaling vision',
+    label: 'Practitioners to Certify',
+    description: 'AXSEL long-term certification ambition across Africa',
   },
 ];
 
@@ -96,7 +101,12 @@ export default function ImpactCounter() {
                 <stat.icon className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <div className="mt-3 text-2xl font-extrabold tracking-tight text-charcoal sm:mt-6 sm:text-3xl md:text-4xl">
-                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                <AnimatedCounter
+                  end={stat.value}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix || ''}
+                  decimals={stat.decimals || 0}
+                />
               </div>
               <div className="mt-2 text-sm font-semibold uppercase tracking-wider text-terracotta">
                 {stat.label}
