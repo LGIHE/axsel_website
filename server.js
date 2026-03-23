@@ -88,7 +88,8 @@ app.post('/api/send-email', async (req, res) => {
   }
 });
 
-// Strategy PDF download endpoint
+// Strategy PDF download endpoint (proxied from api/strategy.js in production)
+// This route mimics the Vercel API for local development
 app.get('/strategy', (req, res) => {
   try {
     const pdfPath = path.join(__dirname, 'public', 'AXSEL_Strategy.pdf');
