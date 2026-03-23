@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
             <img
-              src="/logo.png"
+              src="/axsel_logo.svg"
               alt="AXSEL Logo"
               className="h-24 w-auto"
             />
