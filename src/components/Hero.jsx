@@ -34,7 +34,7 @@ export default function Hero() {
           {/* Subtext */}
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal-light sm:text-xl">
             AXSEL, the Africa Center of Social Emotional Learning, builds on ALiVE's legacy since
-            2017 to translate evidence into scalable SEL solutions across curriculum, pedagogy,
+            2018 to translate evidence into scalable SEL solutions across curriculum, pedagogy,
             assessment, and credentials. Today, less than 10% of adolescents in East Africa show
             proficiency in key SEL competencies, with problem-solving as low as 2.7%.
           </p>

@@ -4,7 +4,7 @@ import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const timelineItems = [
   {
-    year: '2016',
+    year: '2018',
     title: 'ALiVE Project Inception',
     description:
       'Action for Life Skills and Values in East Africa launched as a collaborative research and practice initiative across Kenya, Uganda, Rwanda, and Tanzania.',
@@ -18,7 +18,7 @@ const timelineItems = [
     tag: 'Research',
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'AXSEL Concept Formalised',
     description:
       'The vision for AXSEL — the Africa Center of Social Emotional Learning — is formalised, transitioning from a project-based approach to a pan-African institutional model.',
