@@ -19,7 +19,9 @@ const ALiVELegacy = lazy(() => import('./components/ALiVELegacy'));
 const EvidenceHub = lazy(() => import('./components/EvidenceHub'));
 const ACSSPortal = lazy(() => import('./components/ACSSPortal'));
 const SELDashboard = lazy(() => import('./components/SELDashboard'));
+const HomeHighlights = lazy(() => import('./components/HomeHighlights'));
 const PartnerInquiry = lazy(() => import('./components/PartnerInquiry'));
+const AnchorPartnersSection = lazy(() => import('./components/AnchorPartnersSection'));
 const Footer = lazy(() => import('./components/Footer'));
 
 function SectionFallback({ minHeight = 320 }) {
@@ -62,9 +64,19 @@ function HomePage() {
             <SELDashboard />
           </Suspense>
         </DeferredSection>
+        <DeferredSection anchorId="home-highlights" minHeight={960} rootMargin="450px 0px">
+          <Suspense fallback={<SectionFallback minHeight={960} />}>
+            <HomeHighlights />
+          </Suspense>
+        </DeferredSection>
         <DeferredSection anchorId="partner" minHeight={520} rootMargin="450px 0px">
           <Suspense fallback={<SectionFallback minHeight={520} />}>
             <PartnerInquiry />
+          </Suspense>
+        </DeferredSection>
+        <DeferredSection anchorId="anchor-partners" minHeight={420} rootMargin="450px 0px">
+          <Suspense fallback={<SectionFallback minHeight={420} />}>
+            <AnchorPartnersSection />
           </Suspense>
         </DeferredSection>
       </main>
