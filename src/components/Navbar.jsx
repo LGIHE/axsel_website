@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#legacy' },
+  { label: 'Home', href: '/#home' },
+  { label: 'About', href: '/#legacy' },
   // { label: 'Evidence Hub', href: '#evidence' },
-  { label: 'ACIP', href: '#acip' },
-  { label: 'Dashboard', href: '#dashboard' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'ACIP', href: '/#acip' },
+  { label: 'Dashboard', href: '/#dashboard' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -29,7 +30,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-18 items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img
               src="/axsel_logo.svg"
               alt="AXSEL Logo"
@@ -53,7 +54,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden lg:block">
             <a
-              href="#partner"
+              href="/#partner"
               className="inline-flex items-center gap-2 rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-terracotta-dark hover:shadow-md"
             >
               Partner With Us
@@ -87,7 +88,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#partner"
+              href="/#partner"
               onClick={() => setIsOpen(false)}
               className="mt-3 block rounded-full bg-terracotta px-5 py-2.5 text-center text-sm font-semibold text-white"
             >

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import DeferredSection from './components/DeferredSection';
 import NotFound from './components/NotFound';
+import ResourcesPage from './components/ResourcesPage';
 
 const ImpactCounter = lazy(() => import('./components/ImpactCounter'));
 const ThreeLevers = lazy(() => import('./components/ThreeLevers'));
@@ -79,6 +80,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/resources" element={<ResourcesPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
