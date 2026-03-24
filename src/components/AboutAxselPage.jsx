@@ -93,6 +93,26 @@ export default function AboutAxselPage() {
         <section className="mt-10">
           <ThreeLevers />
         </section>
+
+        <section className="mt-10 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="rounded-2xl border border-warm-gray-dark bg-white p-8 text-center sm:p-12">
+              <h3 className="text-xl font-bold text-charcoal sm:text-2xl">
+                Download Our Full Strategy
+              </h3>
+              <p className="mx-auto mt-3 max-w-2xl text-base text-charcoal-light">
+                Access the comprehensive AXSEL strategy document to explore our complete roadmap for advancing social-emotional learning across Africa.
+              </p>
+              <a
+                href="/AXSEL_Strategy.pdf"
+                download="AXSEL_Strategy.pdf"
+                className="mt-6 inline-flex items-center rounded-full bg-terracotta px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-terracotta-dark"
+              >
+                Download Strategy PDF
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Suspense fallback={<div aria-hidden="true" style={{ minHeight: 320 }} />}>
