@@ -13,6 +13,7 @@ export default function ContactForm() {
     phone: '',
     subject: '',
     message: '',
+    consent: false,
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -29,7 +30,11 @@ export default function ContactForm() {
   }, [submitted]);
 
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -40,6 +45,12 @@ export default function ContactForm() {
     // Validate form
     if (!isValidEmail(formData.email)) {
       setError('Please enter a valid email address.');
+      setLoading(false);
+      return;
+    }
+
+    if (!formData.consent) {
+      setError('Please confirm consent before submitting.');
       setLoading(false);
       return;
     }
@@ -55,6 +66,7 @@ export default function ContactForm() {
         phone: '',
         subject: '',
         message: '',
+        consent: false,
       });
     } catch (err) {
       setError(err.message || 'Failed to send message. Please try again or contact us directly.');
@@ -253,6 +265,25 @@ export default function ContactForm() {
                       <p className="text-sm font-medium text-red-800">{error}</p>
                     </div>
                   )}
+
+                  <div>
+                    <label className="flex items-start gap-2 text-sm text-charcoal-light">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        checked={formData.consent}
+                        onChange={handleChange}
+                        className="mt-1 h-4 w-4 rounded border-warm-gray-dark text-terracotta focus:ring-terracotta/40"
+                      />
+                      <span>
+                        I agree to AXSEL processing my personal data to respond to this enquiry as described in the{' '}
+                        <a href="/privacy-policy" className="font-semibold text-terracotta hover:text-terracotta-dark">
+                          Privacy Policy
+                        </a>
+                        .
+                      </span>
+                    </label>
+                  </div>
                 </div>
 
                 <button

@@ -7,7 +7,6 @@
  */
 
 const API_ENDPOINT = import.meta.env.VITE_EMAIL_ENDPOINT || '/api/send-email';
-const EMAIL_TO = import.meta.env.VITE_EMAIL_TO || 'info@axsel.africa';
 
 /**
  * Send a contact form email
@@ -23,9 +22,9 @@ export const sendContactEmail = async (formData) => {
       },
       body: JSON.stringify({
         type: 'contact',
-        to: EMAIL_TO,
         subject: `Contact Form: ${formData.subject}`,
         replyTo: formData.email,
+        consent: Boolean(formData.consent),
         data: formData,
       }),
     });
@@ -55,9 +54,9 @@ export const sendPartnershipEmail = async (formData) => {
       },
       body: JSON.stringify({
         type: 'partnership',
-        to: EMAIL_TO,
         subject: `Partnership Inquiry: ${formData.organisation}`,
         replyTo: formData.email,
+        consent: Boolean(formData.consent),
         data: formData,
       }),
     });

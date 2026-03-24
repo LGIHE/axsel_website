@@ -11,6 +11,7 @@ import NewsroomPage from './components/NewsroomPage';
 import AboutAxselPage from './components/AboutAxselPage';
 import AliveTvStoriesPage from './components/AliveTvStoriesPage';
 import ACIPProgramPage from './components/ACIPProgramPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 
 const ImpactCounter = lazy(() => import('./components/ImpactCounter'));
 const StrategicApproachSummary = lazy(() => import('./components/StrategicApproachSummary'));
@@ -87,6 +88,7 @@ function App() {
       <Route path="/acip-program" element={<ACIPProgramPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/open-source" element={<OpenSourcePage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

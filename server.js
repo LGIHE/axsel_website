@@ -15,13 +15,120 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.BACKEND_PORT || 3001;
+const RATE_WINDOW_MS = 15 * 60 * 1000;
+const RATE_MAX_REQUESTS = 6;
+const MAX_SUBJECT_LENGTH = 160;
+const MAX_MESSAGE_LENGTH = 2500;
+const MAX_NAME_LENGTH = 120;
+const MAX_ORG_LENGTH = 180;
+const MAX_PHONE_LENGTH = 40;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const rateBuckets = new Map();
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || '')
+  .split(',')
+  .map((item) => item.trim())
+  .filter(Boolean);
+
+function safeText(value) {
+  if (typeof value !== 'string') return '';
+  return value.trim();
+}
+
+function isEmail(value) {
+  return EMAIL_REGEX.test(value);
+}
+
+function getClientIp(req) {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.length > 0) {
+    return forwarded.split(',')[0].trim();
+  }
+  return req.socket?.remoteAddress || 'unknown';
+}
+
+function rateLimitExceeded(ip) {
+  const now = Date.now();
+  const bucket = rateBuckets.get(ip);
+
+  if (!bucket || now > bucket.resetAt) {
+    rateBuckets.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+
+  if (bucket.count >= RATE_MAX_REQUESTS) {
+    return true;
+  }
+
+  bucket.count += 1;
+  return false;
+}
+
+function validatePayload(type, data, subject, replyTo, consent) {
+  const cleanSubject = safeText(subject);
+  const cleanReplyTo = safeText(replyTo);
+  const cleanName = safeText(data?.name);
+  const cleanEmail = safeText(data?.email);
+  const cleanPhone = safeText(data?.phone);
+  const cleanMessage = safeText(data?.message);
+  const cleanOrganisation = safeText(data?.organisation);
+
+  if (!consent) {
+    return 'Consent is required.';
+  }
+
+  if (!cleanSubject || cleanSubject.length > MAX_SUBJECT_LENGTH) {
+    return 'Invalid subject.';
+  }
+
+  if (!cleanName || cleanName.length > MAX_NAME_LENGTH) {
+    return 'Invalid name.';
+  }
+
+  if (!cleanEmail || !isEmail(cleanEmail)) {
+    return 'Invalid email address.';
+  }
+
+  if (cleanReplyTo && !isEmail(cleanReplyTo)) {
+    return 'Invalid reply-to address.';
+  }
+
+  if (cleanPhone.length > MAX_PHONE_LENGTH) {
+    return 'Invalid phone number.';
+  }
+
+  if (!cleanMessage || cleanMessage.length > MAX_MESSAGE_LENGTH) {
+    return 'Invalid message.';
+  }
+
+  if (type === 'partnership' && (!cleanOrganisation || cleanOrganisation.length > MAX_ORG_LENGTH)) {
+    return 'Invalid organisation.';
+  }
+
+  return null;
+}
+
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('X-Frame-Options', 'DENY');
+  next();
+});
+
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
+}));
+app.use(express.json({ limit: '20kb' }));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -31,12 +138,19 @@ app.get('/health', (req, res) => {
 // Email sending endpoint
 app.post('/api/send-email', async (req, res) => {
   try {
-    const { type, to, subject, replyTo, data } = req.body;
+    const { type, subject, replyTo, consent, data } = req.body || {};
+
+    const ip = getClientIp(req);
+    if (rateLimitExceeded(ip)) {
+      return res.status(429).json({ error: 'Too many requests. Please try again later.' });
+    }
+
+    const recipientEmail = process.env.RESEND_EMAIL_TO || 'info@axsel.africa';
 
     // Validate required fields
-    if (!to || !subject || !data) {
+    if (!subject || !data) {
       return res.status(400).json({
-        error: 'Missing required fields: to, subject, or data',
+        error: 'Missing required fields: subject or data',
       });
     }
 
@@ -45,6 +159,11 @@ app.post('/api/send-email', async (req, res) => {
       return res.status(400).json({
         error: 'Invalid type. Must be "contact" or "partnership"',
       });
+    }
+
+    const validationError = validatePayload(type, data, subject, replyTo, consent);
+    if (validationError) {
+      return res.status(400).json({ error: validationError });
     }
 
     // Select appropriate email template
@@ -58,7 +177,7 @@ app.post('/api/send-email', async (req, res) => {
     // Send email using Resend
     const result = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
-      to: to,
+      to: recipientEmail,
       replyTo: replyTo || data.email,
       subject: subject,
       html: htmlContent,
@@ -69,7 +188,6 @@ app.post('/api/send-email', async (req, res) => {
       console.error('Resend API error:', result.error);
       return res.status(500).json({
         error: 'Failed to send email',
-        details: result.error,
       });
     }
 
@@ -83,7 +201,6 @@ app.post('/api/send-email', async (req, res) => {
     console.error('Email sending error:', error);
     return res.status(500).json({
       error: 'Failed to send email',
-      details: error.message,
     });
   }
 });

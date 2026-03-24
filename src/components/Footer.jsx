@@ -25,6 +25,7 @@ const footerLinks = {
     { label: 'ALiVE Legacy', href: '/#legacy' },
     { label: 'Partner With Us', href: '/#partner' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
   ],
 };
 
