@@ -7,6 +7,9 @@ import NotFound from './components/NotFound';
 import ResourcesPage from './components/ResourcesPage';
 import ContactPage from './components/ContactPage';
 import OpenSourcePage from './components/OpenSourcePage';
+import NewsroomPage from './components/NewsroomPage';
+import AboutAxselPage from './components/AboutAxselPage';
+import AliveTvStoriesPage from './components/AliveTvStoriesPage';
 
 const ImpactCounter = lazy(() => import('./components/ImpactCounter'));
 const ThreeLevers = lazy(() => import('./components/ThreeLevers'));
@@ -77,6 +80,9 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/resources" element={<ResourcesPage />} />
+      <Route path="/newsroom" element={<NewsroomPage />} />
+      <Route path="/alive-tv-stories" element={<AliveTvStoriesPage />} />
+      <Route path="/about-axsel" element={<AboutAxselPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/open-source" element={<OpenSourcePage />} />
       <Route path="*" element={<NotFound />} />
