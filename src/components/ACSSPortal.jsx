@@ -145,7 +145,7 @@ export default function ACSSPortal() {
               </p>
             </div>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-terracotta-dark hover:shadow-xl"
             >
               Register Interest

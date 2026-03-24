@@ -1,4 +1,4 @@
-import { Building2, MapPin, Phone, Instagram, Youtube } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 
 const socialLinks = [
   { label: 'Twitter/X', href: 'https://x.com/AXSEL_Center', short: 'X' },
@@ -8,22 +8,23 @@ const socialLinks = [
 
 const footerLinks = {
   Programs: [
-    { label: 'ACIP Certification', href: '#acip' },
-    { label: 'Micro-credentials', href: '#acip' },
-    { label: 'Curriculum Integration', href: '#home' },
-    { label: 'Training Workshops', href: '#contact' },
+    { label: 'ACIP Certification', href: '/#acip' },
+    { label: 'Micro-credentials', href: '/#acip' },
+    { label: 'Curriculum Integration', href: '/#home' },
+    { label: 'Training Workshops', href: '/contact' },
   ],
   Resources: [
-    { label: 'Research Papers', href: '#evidence' },
-    { label: 'Policy Briefs', href: '#evidence' },
-    { label: 'Technical Notes', href: '#evidence' },
-    { label: 'State of SEL Dashboard', href: '#dashboard' },
+    { label: 'Research Papers', href: '/resources' },
+    { label: 'Policy Briefs', href: '/resources' },
+    { label: 'Technical Notes', href: '/resources' },
+    { label: 'State of SEL Dashboard', href: '/#dashboard' },
+    { label: 'Open Source Platform', href: '/open-source' },
   ],
   Organisation: [
-    { label: 'About AXSEL', href: '#legacy' },
-    { label: 'ALiVE Legacy', href: '#legacy' },
-    { label: 'Partner With Us', href: '#partner' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About AXSEL', href: '/#legacy' },
+    { label: 'ALiVE Legacy', href: '/#legacy' },
+    { label: 'Partner With Us', href: '/#partner' },
+    { label: 'Contact', href: '/contact' },
   ],
 };
 
@@ -43,23 +44,6 @@ export default function Footer() {
               The Africa Center of Social Emotional Learning — building towards systemic change
               through accreditation, evidence-informed practice, and continental collaboration.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-gray-400">
-              <div className="flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-terracotta-light" />
-                <span>Luigi Giussani Institute of Higher Education</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-terracotta-light" />
-                <span>
-                  Luzira, Kampala, Uganda<br />
-                  P.O Box 40390
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-terracotta-light" />
-                <span>+256 771 234567</span>
-              </div>
-            </div>
 
             <div className="mt-6">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-terracotta-light">

@@ -5,6 +5,8 @@ import Hero from './components/Hero';
 import DeferredSection from './components/DeferredSection';
 import NotFound from './components/NotFound';
 import ResourcesPage from './components/ResourcesPage';
+import ContactPage from './components/ContactPage';
+import OpenSourcePage from './components/OpenSourcePage';
 
 const ImpactCounter = lazy(() => import('./components/ImpactCounter'));
 const ThreeLevers = lazy(() => import('./components/ThreeLevers'));
@@ -13,7 +15,6 @@ const EvidenceHub = lazy(() => import('./components/EvidenceHub'));
 const ACSSPortal = lazy(() => import('./components/ACSSPortal'));
 const SELDashboard = lazy(() => import('./components/SELDashboard'));
 const PartnerInquiry = lazy(() => import('./components/PartnerInquiry'));
-const ContactForm = lazy(() => import('./components/ContactForm'));
 const Footer = lazy(() => import('./components/Footer'));
 
 function SectionFallback({ minHeight = 320 }) {
@@ -61,11 +62,6 @@ function HomePage() {
             <PartnerInquiry />
           </Suspense>
         </DeferredSection>
-        <DeferredSection anchorId="contact" minHeight={520} rootMargin="450px 0px">
-          <Suspense fallback={<SectionFallback minHeight={520} />}>
-            <ContactForm />
-          </Suspense>
-        </DeferredSection>
       </main>
       <DeferredSection minHeight={320} rootMargin="450px 0px">
         <Suspense fallback={<SectionFallback minHeight={320} />}>
@@ -81,6 +77,8 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/resources" element={<ResourcesPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/open-source" element={<OpenSourcePage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

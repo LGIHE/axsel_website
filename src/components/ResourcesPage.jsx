@@ -1,4 +1,5 @@
 import { lazy, Suspense, useMemo, useState } from 'react';
+import { ArrowUpRight, Database } from 'lucide-react';
 import Navbar from './Navbar';
 
 const Footer = lazy(() => import('./Footer'));
@@ -188,8 +189,8 @@ export default function ResourcesPage() {
     <div className="min-h-screen bg-academic-white">
       <Navbar />
 
-      <main className="pt-40 pb-16">
-        <section className="relative overflow-hidden mt-16 px-4 sm:px-6 lg:px-8">
+      <main className="pt-30 pb-16">
+        <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="px-6 py-12 sm:px-10">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-terracotta">
@@ -198,15 +199,41 @@ export default function ResourcesPage() {
               <h1 className="mt-3 max-w-3xl text-3xl font-bold text-charcoal sm:text-5xl">
                 Resources
               </h1>
-              <p className="mt-4 max-w-3xl text-base leading-7 text-charcoal-light sm:text-lg">
-                Browse publications, briefs, and reports sourced from the ALiVE resources library.
+              <p className="mt-4 max-w-4xl text-base leading-7 text-charcoal-light sm:text-lg">
+                Browse publications, briefs, reports, and datasets sourced from the ALiVE resources library.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="mt-10 px-4 sm:px-6 lg:px-8">
+        <section className="px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
+            <div className="mb-8 rounded-2xl border border-warm-gray-dark bg-white p-6 sm:p-7">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="max-w-3xl">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[#e8f3fb] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-terracotta-dark">
+                    <Database className="h-3.5 w-3.5" />
+                    Open-Source Platform
+                  </span>
+                  <h2 className="mt-3 text-xl font-bold text-charcoal sm:text-2xl">
+                    Explore tools, data, and SEL assessment resources
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-charcoal-light sm:text-base">
+                    Access the Open Source platform for life skills and values assessments, survey
+                    toolkits, large-scale SEL datapoints, and supporting manuals tailored to the
+                    East African context.
+                  </p>
+                </div>
+                <a
+                  href="/open-source"
+                  className="inline-flex items-center gap-2 self-start rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
+                >
+                  Go to Open Source
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
             <div className="mb-6 flex flex-col gap-10 rounded-2xl border border-warm-gray-dark bg-white p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
               <div className="flex gap-2">
                 {categories.map((category) => {

@@ -8,7 +8,8 @@ const navLinks = [
   { label: 'ACIP', href: '/#acip' },
   { label: 'Dashboard', href: '/#dashboard' },
   { label: 'Resources', href: '/resources' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Open Source', href: '/open-source' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
