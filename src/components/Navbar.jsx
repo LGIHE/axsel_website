@@ -52,7 +52,7 @@ export default function Navbar() {
                 <div key={link.label} className="group relative">
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-charcoal-light transition-colors hover:text-terracotta"
+                    className="inline-flex items-center gap-1 text-sm font-bold text-charcoal-light transition-colors hover:text-terracotta"
                   >
                     {link.label}
                     <ChevronDown className="h-4 w-4" />
@@ -63,7 +63,7 @@ export default function Navbar() {
                       <a
                         key={subLink.href}
                         href={subLink.href}
-                        className="block rounded-md px-3 py-2 text-sm font-medium text-charcoal-light transition-colors hover:bg-warm-gray hover:text-terracotta"
+                        className="block rounded-md px-3 py-2 text-sm font-bold text-charcoal-light transition-colors hover:bg-warm-gray hover:text-terracotta"
                       >
                         {subLink.label}
                       </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-charcoal-light transition-colors hover:text-terracotta"
+                  className="text-sm font-bold text-charcoal-light transition-colors hover:text-terracotta"
                 >
                   {link.label}
                 </a>
@@ -118,7 +118,7 @@ export default function Navbar() {
                         key={subLink.href}
                         href={subLink.href}
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-md px-3 py-2 text-sm font-medium text-charcoal-light transition-colors hover:bg-warm-gray hover:text-terracotta"
+                        className="block rounded-md px-3 py-2 text-sm font-bold text-charcoal-light transition-colors hover:bg-warm-gray hover:text-terracotta"
                       >
                         {subLink.label}
                       </a>
