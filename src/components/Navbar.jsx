@@ -5,8 +5,9 @@ const navLinks = [
   { label: 'Home', href: '/#home' },
   { label: 'About', href: '/about-axsel' },
   // { label: 'Evidence Hub', href: '#evidence' },
-  { label: 'ACIP', href: '/#acip' },
-  { label: 'Dashboard', href: '/#dashboard' },
+  { label: 'ACIP Program', href: '/acip-program' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Open Source', href: '/open-source' },
   {
     label: 'News & Events',
     children: [
@@ -14,8 +15,6 @@ const navLinks = [
       { label: 'ALiVE TV Stories', href: '/alive-tv-stories' },
     ],
   },
-  { label: 'Resources', href: '/resources' },
-  { label: 'Open Source', href: '/open-source' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
