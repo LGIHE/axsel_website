@@ -117,6 +117,22 @@ export default function StrategicApproachSummary() {
             );
           })}
         </motion.div>
+
+        {/* Learn More Button */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-12 flex justify-center"
+        >
+          <a
+            href="/about-axsel"
+            className="inline-flex items-center rounded-full bg-terracotta px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-terracotta-dark"
+          >
+            Explore Our Full Strategic Approach
+          </a>
+        </motion.div>
       </div>
     </section>
   );
