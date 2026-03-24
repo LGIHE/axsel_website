@@ -90,6 +90,16 @@ export default function ImpactCounter() {
         viewport={{ once: true, amount: 0.3 }}
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
       >
+        {/* Intro Section */}
+        <motion.div variants={fadeInUp} className="mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">
+            Our Impact & Vision
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
+            Building on the ALiVE foundation, AXSEL aims to advance social-emotional learning across Africa through evidence-driven impact and strategic transformation.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-5">
           {stats.map((stat) => (
             <motion.div
