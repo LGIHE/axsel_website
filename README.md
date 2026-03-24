@@ -64,6 +64,37 @@ npm run build
 npm run preview
 ```
 
+## Environment Variables
+
+Set these variables in your deployment platform before enabling contact and partnership forms.
+
+### Server-side required
+
+- `RESEND_API_KEY`: Resend API key used by API handlers.
+- `RESEND_FROM_EMAIL`: Verified sender address used for outgoing mail.
+- `RESEND_EMAIL_TO`: Internal recipient inbox for form submissions.
+- `ALLOWED_ORIGINS`: Comma-separated list of trusted site origins allowed to call the email API.
+
+Example:
+
+```env
+RESEND_API_KEY=re_xxxxxxxxx
+RESEND_FROM_EMAIL=noreply@axsel.africa
+RESEND_EMAIL_TO=info@axsel.africa
+ALLOWED_ORIGINS=https://axsel.africa,https://www.axsel.africa
+```
+
+### Optional
+
+- `BACKEND_PORT`: Local Express backend port (default: `3001`).
+- `VITE_EMAIL_ENDPOINT`: Frontend endpoint for submissions (default: `/api/send-email`).
+
+### Privacy and security notes
+
+- Keep `RESEND_API_KEY` server-only. Never expose it in client variables.
+- Do not use a client-side recipient variable; recipient routing is enforced on the server.
+- Keep `ALLOWED_ORIGINS` up to date for every production/staging domain.
+
 ## Project Structure
 
 ```
