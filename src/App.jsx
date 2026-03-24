@@ -13,7 +13,7 @@ import AliveTvStoriesPage from './components/AliveTvStoriesPage';
 import ACIPProgramPage from './components/ACIPProgramPage';
 
 const ImpactCounter = lazy(() => import('./components/ImpactCounter'));
-const ThreeLevers = lazy(() => import('./components/ThreeLevers'));
+const StrategicApproachSummary = lazy(() => import('./components/StrategicApproachSummary'));
 const ALiVELegacy = lazy(() => import('./components/ALiVELegacy'));
 const EvidenceHub = lazy(() => import('./components/EvidenceHub'));
 const ACSSPortal = lazy(() => import('./components/ACSSPortal'));
@@ -38,7 +38,7 @@ function HomePage() {
         </DeferredSection>
         <DeferredSection anchorId="approach" minHeight={420} rootMargin="450px 0px">
           <Suspense fallback={<SectionFallback minHeight={420} />}>
-            <ThreeLevers />
+            <StrategicApproachSummary />
           </Suspense>
         </DeferredSection>
         <DeferredSection anchorId="legacy" minHeight={520} rootMargin="450px 0px">

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Navbar from './Navbar';
+import ThreeLevers from './ThreeLevers';
 
 const Footer = lazy(() => import('./Footer'));
 
@@ -87,6 +88,10 @@ export default function AboutAxselPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="mt-10">
+          <ThreeLevers />
         </section>
       </main>
 
