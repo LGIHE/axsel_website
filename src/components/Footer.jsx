@@ -1,9 +1,11 @@
-import { Instagram, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 
 const socialLinks = [
-  { label: 'Twitter/X', href: 'https://x.com/AXSEL_Center', short: 'X' },
-  { label: 'Instagram', href: 'https://www.instagram.com/axsel_center/', icon: Instagram },
-  { label: 'YouTube', href: 'https://www.youtube.com/@AXSELCenter', icon: Youtube },
+  { label: 'Twitter/X', href: 'https://x.com/axselafrica', short: 'X' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/axselafrica/', icon: Linkedin },
+  { label: 'Facebook', href: 'https://www.facebook.com/axselafrica', icon: Facebook },
+  { label: 'Instagram', href: 'https://www.instagram.com/axselafrica/', icon: Instagram },
+  { label: 'YouTube', href: 'https://www.youtube.com/@axselafrica', icon: Youtube },
 ];
 
 const footerLinks = {

@@ -119,9 +119,11 @@ src/
 - **Location**: Luzira, Kampala, Uganda
 - **Phone**: +256 771 234567
 - **Social Media**: 
-  - [Twitter/X](https://x.com/AXSEL_Center)
-  - [Instagram](https://www.instagram.com/axsel_center/)
-  - [YouTube](https://www.youtube.com/@AXSELCenter)
+  - [Twitter/X](https://x.com/axselafrica)
+  - [LinkedIn](https://www.linkedin.com/company/axselafrica/)
+  - [Facebook](https://www.facebook.com/axselafrica)
+  - [Instagram](https://www.instagram.com/axselafrica/)
+  - [YouTube](https://www.youtube.com/@axselafrica)
 
 ## License
 
